@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MailTDS-Activity</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    body {
+      background-color: #f8fafc;
+      color: #0b1a2e;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* header / nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      padding: 0.5rem 0 1.5rem 0;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-icon {
+      background: #0b1a2e;
+      color: #facc15;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.7rem;
+      letter-spacing: -0.02em;
+    }
+
+    .logo-text span {
+      color: #facc15;
+      background: #0b1a2e;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      margin-left: 0.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e2f44;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a:hover {
+      color: #0b1a2e;
+      border-bottom-color: #facc15;
+    }
+
+    .btn-outline {
+      border: 1.5px solid #0b1a2e;
+      background: transparent;
+      padding: 0.5rem 1.4rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #0b1a2e;
+      transition: 0.2s;
+      cursor: default;
+    }
+
+    .btn-outline i {
+      margin-right: 0.4rem;
+    }
+
+    /* hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+      margin: 3rem 0 4rem 0;
+    }
+
+    .hero-content {
+      flex: 1 1 360px;
+    }
+
+    .hero-badge {
+      background: #e6edf5;
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #1a334a;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-content h1 i {
+      color: #facc15;
+      background: #0b1a2e;
+      padding: 0.2rem 0.6rem;
+      border-radius: 16px;
+      font-size: 2.2rem;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: #2a405a;
+      max-width: 480px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.8rem;
+      margin-top: 1.8rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0b1a2e;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #3f5a77;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-image {
+      flex: 1 1 340px;
+      background: #0b1a2e;
+      border-radius: 32px;
+      padding: 2rem 1.5rem;
+      color: white;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image::after {
+      content: "“";
+      font-size: 12rem;
+      position: absolute;
+      right: 10px;
+      bottom: -30px;
+      opacity: 0.08;
+      color: #facc15;
+      font-family: serif;
+    }
+
+    .hero-image i {
+      font-size: 2.8rem;
+      color: #facc15;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-image h3 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-image p {
+      opacity: 0.8;
+      max-width: 280px;
+    }
+
+    /* portfolio grid */
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 3.5rem 0 1.8rem 0;
+    }
+
+    .section-title h2 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title h2 i {
+      color: #facc15;
+      margin-right: 0.5rem;
+    }
+
+    .section-title span {
+      color: #3f5a77;
+      font-weight: 500;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+
+    .portfolio-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.8rem 1.5rem 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+      transition: all 0.25s ease;
+      border: 1px solid #eef3f8;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 32px -12px rgba(0, 0, 0, 0.12);
+      border-color: #d6e0ea;
+    }
+
+    .card-icon {
+      background: #0b1a2e0c;
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: #0b1a2e;
+      margin-bottom: 1.2rem;
+    }
+
+    .portfolio-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .portfolio-card .company-tag {
+      display: inline-block;
+      background: #eaf0f6;
+      border-radius: 40px;
+      padding: 0.2rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      color: #1f3b57;
+      margin: 0.5rem 0 0.7rem 0;
+    }
+
+    .portfolio-card p {
+      color: #2d4560;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #e7eef5;
+      padding-top: 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #3f5a77;
+    }
+
+    .card-meta i {
+      margin-right: 0.2rem;
+      color: #facc15;
+    }
+
+    /* features / extra */
+    .feature-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background: #0b1a2e;
+      border-radius: 40px;
+      padding: 2.8rem 2.5rem;
+      margin: 4rem 0 2rem 0;
+      color: white;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .feature-text {
+      flex: 2 1 260px;
+    }
+
+    .feature-text h2 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-text h2 i {
+      color: #facc15;
+      margin-right: 0.4rem;
+    }
+
+    .feature-text p {
+      opacity: 0.7;
+      max-width: 420px;
+    }
+
+    .feature-badge {
+      background: #facc15;
+      color: #0b1a2e;
+      padding: 0.6rem 2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* footer */
+    .footer {
+      margin-top: 4.5rem;
+      padding: 1.8rem 0 0.5rem;
+      border-top: 1px solid #dce5ef;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      color: #2d4560;
+    }
+
+    .footer-social a {
+      color: #1e2f44;
+      margin-left: 1.2rem;
+      font-size: 1.2rem;
+      transition: 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: #0b1a2e;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 650px) {
+      .hero-content h1 {
+        font-size: 2.3rem;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+      .hero-stats {
+        gap: 1.6rem;
+      }
+      .feature-row {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- navigation -->
+    <header class="navbar">
+      <div class="logo">
+        <div class="logo-icon"><i class="fas fa-shield-hawk"></i></div>
+        <div class="logo-text">Blackhawk <span>⏤</span></div>
+      </div>
+      <div class="nav-links">
+        <a href="#">Portfolio</a>
+        <a href="#">Interviews</a>
+        <a href="#">Talent</a>
+        <a href="#">Insights</a>
+        <a href="#" class="btn-outline"><i class="fas fa-paper-plane"></i> Contact</a>
+      </div>
+    </header>
+
+    <!-- hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-arrow-trend-up" style="margin-right: 6px;"></i> #1 recruitment portfolio</div>
+        <h1>Where <i>talent</i> meets <br />opportunity.</h1>
+        <p class="hero-desc">Mailtds-activity curates exceptional candidates and connects them with visionary companies. Explore our latest placements.</p>
+        <div class="hero-stats">
+          <div class="stat-item"><span class="stat-number">87%</span><span class="stat-label">offer rate</span></div>
+          <div class="stat-item"><span class="stat-number">350+</span><span class="stat-label">placements</span></div>
+          <div class="stat-item"><span class="stat-number">4.9</span><span class="stat-label">client rating</span></div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <i class="fas fa-handshake"></i>
+        <h3>MailTDS <br />Activity</h3>
+        <p>Portfolio of excellence · 2026</p>
+      </div>
+    </section>
+
+    <!-- portfolio grid -->
+    <div class="section-title">
+      <h2><i class="fas fa-briefcase"></i> Featured placements</h2>
+      <span><i class="fas fa-arrow-right"></i> view all</span>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="fas fa-building"></i></div>
+        <h3>Finova</h3>
+        <span class="company-tag"><i class="fas fa-tag"></i> VP engineering</span>
+        <p>Placed senior director of product · remote · series C</p>
+        <div class="card-meta"><span><i class="fas fa-user"></i> 3 candidates</span><span><i class="fas fa-calendar"></i> Q4 2025</span></div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="fas fa-microchip"></i></div>
+        <h3>Apex AI</h3>
+        <span class="company-tag"><i class="fas fa-tag"></i> ML lead</span>
+        <p>Head of research · full-time · hybrid (NYC)</p>
+        <div class="card-meta"><span><i class="fas fa-user"></i> 5 candidates</span><span><i class="fas fa-calendar"></i> Q1 2026</span></div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="fas fa-rocket"></i></div>
+        <h3>Stellar Health</h3>
+        <span class="company-tag"><i class="fas fa-tag"></i> chief product</span>
+        <p>CPO · digital health · fast-growing startup</p>
+        <div class="card-meta"><span><i class="fas fa-user"></i> 2 candidates</span><span><i class="fas fa-calendar"></i> Q3 2025</span></div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="fas fa-cloud"></i></div>
+        <h3>Nimbus</h3>
+        <span class="company-tag"><i class="fas fa-tag"></i> devops lead</span>
+        <p>Senior SRE · fintech · 100% remote</p>
+        <div class="card-meta"><span><i class="fas fa-user"></i> 4 candidates</span><span><i class="fas fa-calendar"></i> Q2 2026</span></div>
+      </div>
+
+    </div>
+
+    <!-- extra: second row (more portfolio) -->
+    <div class="portfolio-grid" style="margin-top: 0.2rem;">
+
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="fas fa-crown"></i></div>
+        <h3>Vanguard</h3>
+        <span class="company-tag"><i class="fas fa-tag"></i> CEO search</span>
+        <p>Interim CEO · private equity · Europe</p>
+        <div class="card-meta"><span><i class="fas fa-user"></i> 1 candidate</span><span><i class="fas fa-calendar"></i> Q4 2025</span></div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="fas fa-palette"></i></div>
+        <h3>Creativ co.</h3>
+        <span class="company-tag"><i class="fas fa-tag"></i> design director</span>
+        <p>Head of brand · creative agency · hybrid</p>
+        <div class="card-meta"><span><i class="fas fa-user"></i> 6 candidates</span><span><i class="fas fa-calendar"></i> Q1 2026</span></div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="fas fa-globe"></i></div>
+        <h3>EcoSphere</h3>
+        <span class="company-tag"><i class="fas fa-tag"></i> impact lead</span>
+        <p>Director of sustainability · climate tech</p>
+        <div class="card-meta"><span><i class="fas fa-user"></i> 3 candidates</span><span><i class="fas fa-calendar"></i> Q2 2026</span></div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="card-icon"><i class="fas fa-robot"></i></div>
+        <h3>NeuralX</h3>
+        <span class="company-tag"><i class="fas fa-tag"></i> AI research</span>
+        <p>Principal scientist · fully remote · pre-IPO</p>
+        <div class="card-meta"><span><i class="fas fa-user"></i> 2 candidates</span><span><i class="fas fa-calendar"></i> Q3 2026</span></div>
+      </div>
+
+    </div>
+
+    <!-- feature / CTA block -->
+    <div class="feature-row">
+      <div class="feature-text">
+        <h2><i class="fas fa-bolt"></i> Blackhawk interview edge</h2>
+        <p>We don’t just match resumes — we curate narratives. Our portfolio shows only confirmed placements with a 98% retention rate.</p>
+      </div>
+      <div class="feature-badge">
+        <i class="fas fa-arrow-right"></i> 2026 portfolio
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div>
+        <span style="font-weight: 600;">© 2026 MailTDS-Activity</span> 
+        <span style="margin-left: 1.2rem; opacity: 0.6;">Account portfolio</span>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+    </footer>
+
+  </div>
+  <!-- end container -->
+</body>
+</html>
