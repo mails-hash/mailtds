@@ -839,56 +839,56 @@
 
     </div>
 
-    <!-- ===== PRICING SECTION ===== -->
+    <!-- ===== PRICING SECTION (FOR COMPANIES HIRING TALENT) ===== -->
     <section class="pricing" id="pricing">
       <div class="section-title">
-        <h2><i class="fas fa-tag"></i> Simple, transparent pricing</h2>
-        <span>Choose your plan</span>
+        <h2><i class="fas fa-tag"></i> Recruitment packages</h2>
+        <span>For companies hiring talent</span>
       </div>
       <div class="pricing-grid">
-        <!-- Starter -->
+        <!-- Contingency -->
         <div class="pricing-card">
-          <div class="pricing-name">Starter</div>
-          <div class="pricing-desc">For small teams getting started</div>
-          <div class="pricing-price">$29<span>/user/month</span></div>
+          <div class="pricing-name">Contingency</div>
+          <div class="pricing-desc">Pay only when you hire</div>
+          <div class="pricing-price">15%<span> of first-year salary</span></div>
           <ul class="pricing-features">
-            <li><i class="fas fa-check"></i> 10 GB encrypted storage</li>
-            <li><i class="fas fa-check"></i> End-to-end messaging</li>
-            <li><i class="fas fa-check"></i> Standard support (24/7)</li>
-            <li><i class="fas fa-check"></i> Basic threat monitoring</li>
-            <li><i class="fas fa-check"></i> Up to 25 users</li>
+            <li><i class="fas fa-check"></i> Access to pre-vetted candidates</li>
+            <li><i class="fas fa-check"></i> Standard role profile</li>
+            <li><i class="fas fa-check"></i> 30-day replacement guarantee</li>
+            <li><i class="fas fa-check"></i> Email & phone support</li>
+            <li><i class="fas fa-check"></i> Up to 3 candidate submissions</li>
           </ul>
-          <button class="pricing-btn outline contact-trigger">Get started</button>
+          <button class="pricing-btn outline contact-trigger">Start hiring</button>
         </div>
 
-        <!-- Professional (featured) -->
+        <!-- Retained (featured) -->
         <div class="pricing-card featured">
-          <div class="pricing-name">Professional</div>
-          <div class="pricing-desc">For growing businesses</div>
-          <div class="pricing-price">$59<span>/user/month</span></div>
+          <div class="pricing-name">Retained</div>
+          <div class="pricing-desc">Dedicated search for critical roles</div>
+          <div class="pricing-price">20%<span> of first-year salary</span></div>
           <ul class="pricing-features">
-            <li><i class="fas fa-check"></i> 100 GB encrypted storage</li>
-            <li><i class="fas fa-check"></i> End-to-end messaging + DLP</li>
+            <li><i class="fas fa-check"></i> Dedicated recruitment team</li>
+            <li><i class="fas fa-check"></i> Full market mapping & outreach</li>
+            <li><i class="fas fa-check"></i> 60-day replacement guarantee</li>
             <li><i class="fas fa-check"></i> Priority support (24/7)</li>
-            <li><i class="fas fa-check"></i> Advanced threat detection</li>
-            <li><i class="fas fa-check"></i> Up to 100 users</li>
-            <li><i class="fas fa-check"></i> Audit trails & compliance</li>
+            <li><i class="fas fa-check"></i> Unlimited candidate submissions</li>
+            <li><i class="fas fa-check"></i> Interview scheduling & coordination</li>
           </ul>
-          <button class="pricing-btn contact-trigger">Start free trial</button>
+          <button class="pricing-btn contact-trigger">Book a call</button>
         </div>
 
         <!-- Enterprise -->
         <div class="pricing-card">
           <div class="pricing-name">Enterprise</div>
-          <div class="pricing-desc">Custom solutions for large orgs</div>
+          <div class="pricing-desc">Custom talent solutions at scale</div>
           <div class="pricing-price">Custom</div>
           <ul class="pricing-features">
-            <li><i class="fas fa-check"></i> Unlimited encrypted storage</li>
-            <li><i class="fas fa-check"></i> Dedicated SOC & SIEM</li>
-            <li><i class="fas fa-check"></i> 24/7 white-glove support</li>
-            <li><i class="fas fa-check"></i> On-prem or hybrid deployment</li>
-            <li><i class="fas fa-check"></i> Unlimited users</li>
-            <li><i class="fas fa-check"></i> Custom compliance packages</li>
+            <li><i class="fas fa-check"></i> Embedded recruitment partner</li>
+            <li><i class="fas fa-check"></i> Multiple role pipeline</li>
+            <li><i class="fas fa-check"></i> 90-day replacement guarantee</li>
+            <li><i class="fas fa-check"></i> Dedicated account manager</li>
+            <li><i class="fas fa-check"></i> Custom SLA & reporting</li>
+            <li><i class="fas fa-check"></i> Volume hiring discounts</li>
           </ul>
           <button class="pricing-btn outline contact-trigger">Contact sales</button>
         </div>
@@ -923,18 +923,18 @@
   </div>
   <!-- end container -->
 
-  <!-- ===== CONTACT MODAL ===== -->
+  <!-- ===== CONTACT MODAL (FOR COMPANIES HIRING TALENT) ===== -->
   <div class="modal-overlay" id="contactModal">
     <div class="modal-content">
       <button class="modal-close" id="modalClose" aria-label="Close contact form">&times;</button>
       
       <!-- Form state -->
       <div id="formContainer">
-        <h2 class="modal-title">Let's talk</h2>
-        <p class="modal-sub">Fill out the form and our team will get back to you within 24 hours.</p>
+        <h2 class="modal-title">Hire top talent</h2>
+        <p class="modal-sub">Tell us about the role you're hiring for. Our team will get back to you within 24 hours.</p>
         <form id="contactForm">
           <div class="form-group">
-            <label for="name">Full name</label>
+            <label for="name">Your name</label>
             <input type="text" id="name" name="name" required>
           </div>
           <div class="form-group">
@@ -942,32 +942,36 @@
             <input type="email" id="email" name="email" required>
           </div>
           <div class="form-group">
-            <label for="company">Company (optional)</label>
-            <input type="text" id="company" name="company">
+            <label for="company">Company name</label>
+            <input type="text" id="company" name="company" required>
           </div>
           <div class="form-group">
-            <label for="interest">I'm interested in</label>
+            <label for="role">Role you're hiring for</label>
+            <input type="text" id="role" name="role" required>
+          </div>
+          <div class="form-group">
+            <label for="interest">Hiring need</label>
             <select id="interest" name="interest">
-              <option value="managed-it">Managed IT</option>
-              <option value="cybersecurity">Cybersecurity</option>
-              <option value="encrypted-messaging" selected>Encrypted Messaging</option>
-              <option value="cloud-backup">Cloud & Backup</option>
+              <option value="contingency">Contingency search</option>
+              <option value="retained" selected>Retained search</option>
+              <option value="executive">Executive search</option>
+              <option value="volume">Volume hiring</option>
               <option value="other">Other / General inquiry</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
+            <label for="message">Tell us more about the role</label>
             <textarea id="message" name="message" required></textarea>
           </div>
-          <button type="submit" class="form-submit">Send message</button>
+          <button type="submit" class="form-submit">Send inquiry</button>
         </form>
       </div>
 
       <!-- Success state (hidden initially) -->
       <div class="form-success" id="formSuccess">
         <i class="fas fa-check-circle"></i>
-        <h3>Message sent!</h3>
-        <p>Thanks for reaching out. We'll be in touch shortly.</p>
+        <h3>Inquiry sent!</h3>
+        <p>Thanks for reaching out. Our recruitment team will contact you shortly.</p>
       </div>
     </div>
   </div>
@@ -1042,9 +1046,11 @@
         // Basic validation
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
+        const company = document.getElementById('company').value.trim();
+        const role = document.getElementById('role').value.trim();
         const message = document.getElementById('message').value.trim();
         
-        if (!name || !email || !message) {
+        if (!name || !email || !company || !role || !message) {
           alert('Please fill in all required fields.');
           return;
         }
@@ -1054,10 +1060,11 @@
         formSuccess.style.display = 'block';
 
         // Optional: log to console (for demo)
-        console.log('Form submitted (demo):', {
+        console.log('Hiring inquiry submitted (demo):', {
           name,
           email,
-          company: document.getElementById('company').value.trim(),
+          company,
+          role,
           interest: document.getElementById('interest').value,
           message
         });
